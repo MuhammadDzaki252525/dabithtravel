@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    <?php
+                            if(isset($_POST['submit'])){
+                                $ekstensi = array('png', 'jpg', 'jpeg', 'gif');
+                                $image = $_FILES['image']['name'];
+                                $path = $_FILES['image']['tmp_name'];
+                                $x = explode('.', $image);
+                                $exi = strtolower(end($x));
+                                $ukuran = $_FILES['image']['size'];
+
+                                if(in_array($exi, $ekstensi) === true) {
+                                if(!$ukuran < 2000000){
+                                    //jika ukuran  kurang dari 2 mb boleh upload file
+                                    move_uploaded_file($path, 'aset/'.$image);
+
+                                    //simoan data bases
+                                $query = "INSERT INTO media (image, jenis) VALUES ('$image', '')";
+                                $results = mysqli_query($connect, $query);
+                                    if($results){
+                                        '<script>
+                                            alert("berhasil di simpan");
+                                        </script>';
+                                        echo "<meta http-equiv=refresh content=0;URL='media.php'>";
+                                    }else{
+                                    echo '<script>
+                                            alert("error");
+                                            document.location.href = "create-media.php";
+                                          </script>';
+                                          return false;
+                                    }
+                                }else{
+                                    echo '<script>
+                                        alert("ukuran terlalu besar");
+                                        document.location.href = "create-media.php";
+                                    </script>';
+                                    return false;
+                                }
+                                }else{
+                                echo '<script>alert("extensi file yang diupload tidak diperbolehkan");
+                                        document.location.href = "create-media.php";
+                                        </script>';
+                                    
+                                        return false;
+                                }
+                            }
+              ?>-->
+</body>
+</html>
