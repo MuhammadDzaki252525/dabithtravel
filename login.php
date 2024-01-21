@@ -49,7 +49,7 @@ include("koneksi.php");
                                     <form class="user" action="" method="POST">
                                         <input type="hidden" name="id">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="username" aria-describedby="emailHelp" placeholder="Enter Username..." name="username" autofocus autocomplete="off" required>
+                                            <input type="text" class="form-control form-control-user" id="username" aria-describedby="emailHelp" placeholder="Enter Username..." name="email" autofocus autocomplete="off" required>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="password" placeholder="Password" name="password" autocomplete="off">
@@ -115,10 +115,13 @@ if (isset($_POST['submit'])) {
     $username2 = addslashes($username);
     $email2 = addslashes($email);
     $password2 = addslashes($password);
-    $query = "select * from login1 where email = '$email2' and password = '$password2'";
+    // var_dump($password);
+    $query = "select * from login1 where email = '$email' and password = '$password'";
     $sql = mysqli_query($connect, $query);
 
     $cek = mysqli_num_rows($sql);
+
+    // var_dump($cek);
 
     if ($cek > 0) {
         $assoc = mysqli_fetch_assoc($sql);

@@ -108,7 +108,7 @@ include "koneksi.php";
         $namafilenew .= '.';
         $namafilenew .= $exi;
 
-        $k = "SELECT * FROM register WHERE username = '$username' or email = '$email'";
+        $k = "SELECT * FROM login1 WHERE username = '$username' or email = '$email'";
         $o = mysqli_query($connect, $k);
         if (mysqli_num_rows($o) > 0) {
             echo "<script>
@@ -116,7 +116,7 @@ include "koneksi.php";
 			</script>";
             echo "<meta http-equiv=refresh content=2;URL='register.php'>";
         } elseif ($password == $password2) {
-            $query = "INSERT INTO register (username, email, telephone, password, gambar) values ('$username', '$email', $telephone, '$password', '$namafilenew')";
+            $query = "INSERT INTO login1 (username, email, telephone, password, gambar) values ('$username', '$email', $telephone, '$password', '$namafilenew')";
             $results = mysqli_query($connect, $query);
             //jika ukuran  kurang dari 2 mb boleh upload file
             move_uploaded_file($path, 'aset/' . $namafilelbaru);
